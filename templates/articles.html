@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container fst-italic">
+       <div class="card card-body">
+            <h1 class="card-header text-center text-decoration-underline mb-2">Articles</h1>
+            <ul class="list-group">
+                {% for article in articles %}
+                    <li class="list-group-item fw-bold"><a href="article/{{ article[0] }}">{{ article[2] }}</a></li>
+                {% endfor %}
+            </ul>
+       </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container fst-italic">
+        <a href="/articles" class="btn btn-danger btn-sm">back</a>
+        <hr>
+        <div class="card card-body">
+            <h1 class="text-decoration-underline">{{ article[2] }}</h1>
+            <small>Written by {{ article[4] }} on {{ article[5] }}</small>
+            <hr>
+            <div class="body">{{ article[3] | safe }}</div>
+        </div>
+    </div>
+{% endblock %}

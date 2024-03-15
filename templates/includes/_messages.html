@@ -1,0 +1,30 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} mt-3" id="{{message}}">{{ message }}</div>
+      <script>
+        setTimeout(function() {
+            document.getElementById('{{message}}').style.display = 'none';
+        }, 3000); // 3000 milliseconds = 3 seconds
+      </script>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% if error %}
+    <div class="alert alert-danger mt-3" id="errorMessage">{{ error }}</div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+{% endif %}
+
+{% if msg %}
+    <div class="alert alert-success mt-3" id="successMessage">{{ msg }}</div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('successMessage').style.display = 'none';
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+{% endif %}

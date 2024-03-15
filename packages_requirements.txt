@@ -1,0 +1,27 @@
+---
+pip install flask
+pip install mysql-connector-python
+pip install flask-mysqldb
+pip install Flask-WTF
+pip install passlib
+--- tables
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+ id int(3) AUTO_INCREMENT PRIMARY KEY,
+ fullname varchar(100) NOT NULL,
+ email varchar(70) NOT NULL UNIQUE,
+ username varchar(30) NOT NULL UNIQUE,
+ password text NOT NULL,
+ register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+DROP TABLE IF EXISTS articles;
+CREATE TABLE articles (
+ id int(3) AUTO_INCREMENT PRIMARY KEY,
+ code varchar(30) NOT NULL UNIQUE,
+ title varchar(100) NOT NULL,
+ body TEXT NOT NULL,
+ author varchar(100) NOT NULL,
+ create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+--- end
+13.0 default
